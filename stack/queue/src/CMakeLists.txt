@@ -1,4 +1,3 @@
 include_directories(${PROJECT_SOURCE_DIR}/inc)
-set(SOURCE_FILES main.cpp queue.cpp)
-add_executable(queue ${SOURCE_FILES})
+set(SOURCE_FILES queue.cpp)
 add_library(queue_lib STATIC ${SOURCE_FILES})
