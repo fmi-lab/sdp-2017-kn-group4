@@ -6,7 +6,7 @@ U foldl(std::forward_list<T> const& l, U null_value, F f) {
   U result = null_value;
 
   for (auto const& x : l) {
-    result = f(result, x);
+    result = f(std::move(result), x);
   }
 
   return result;
@@ -51,7 +51,7 @@ TEST_CASE("foldl") {
       }
 
       result.push_front(std::make_pair(0, 0));
-      result = foldl(l, result, [](auto&& acc, int x) {
+      result = foldl(l, result, [](auto acc, int x) {
         acc.push_front(std::make_pair(acc.front().second, x));
         return acc;
       });
