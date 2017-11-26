@@ -46,7 +46,7 @@ TEST_CASE("foldl") {
     auto make_consecutive_pairs = [](std::forward_list<int> const& l) {
       std::forward_list<std::pair<int, int>> result;
 
-      if (l.empty() && ++l.cbegin() == l.cend()) {
+      if (l.empty() || ++l.cbegin() == l.cend()) {
         return result;
       }
 
