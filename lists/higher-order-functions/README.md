@@ -24,6 +24,10 @@
 
 Полезни ресурси
 ---------------
+- [lambda изрази](http://en.cppreference.com/w/cpp/language/lambda) - документация
+  - [Lambdas in C++11](http://www.drdobbs.com/cpp/lambdas-in-c11/240168241)
+  - [What is a lambda expression in C++11?](https://stackoverflow.com/questions/7627098/what-is-a-lambda-expression-in-c11)
+
 - [Template argument deduction](http://en.cppreference.com/w/cpp/language/template_argument_deduction)
 
   Повече информация за това как компилаторът извежда типовете на шаблонните
