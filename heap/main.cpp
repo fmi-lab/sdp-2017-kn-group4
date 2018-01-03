@@ -16,7 +16,7 @@ int kth_smallest(int array[], int n, int k) {
 }
 
 // Намира k-тия най-малък елемент в масив, използвайки max heap.
-// Сложност: O(k + (n - k) * log(n))
+// Сложност: O(k + (n - k) * log(k))
 int kth_smallest_with_max_heap(int array[], int n, int k) {
   std::priority_queue<int> max_heap(array, array + k);
 
@@ -33,7 +33,7 @@ int kth_smallest_with_max_heap(int array[], int n, int k) {
 // Реализира структура Median, която съхранява редица от елементи и
 // може да намира медианата на редицата. Поддържа следните 2 операции:
 // void insert(x) - вмъква елемент в редицата със сложност O(log(n))
-// double median() - намира медианата на редицата
+// double median() - намира медианата на редицата със сложност O(1)
 class Median {
   std::priority_queue<int> max_heap;
   std::priority_queue<int, std::vector<int>, std::greater<int>> min_heap;
