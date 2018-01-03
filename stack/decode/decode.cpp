@@ -20,7 +20,9 @@ std::string decode(std::string const& compressed) {
   for (size_t i = 0, length = compressed.length(); i < length; ++i) {
     char c = compressed[i];
 
-    if (std::isdigit(c)) {
+    if (c >= 'A' && c <= 'Z') {
+      s.top() += c;
+    } else if (std::isdigit(c)) {
       std::string number;
       while (compressed[i] != '(') {
         number += compressed[i];
@@ -29,8 +31,6 @@ std::string decode(std::string const& compressed) {
 
       s.push(number);
       s.push("");
-    } else if (c >= 'A' && c <= 'Z') {
-      s.top() += c;
     } else if (c == ')') {
       std::string current = s.top();
       s.pop();
